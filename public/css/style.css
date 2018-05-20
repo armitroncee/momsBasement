@@ -43,5 +43,21 @@ body, html {
     top: 80%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
 
+.card-image {
+    height: 300px;
+    width: 500px;
+    margin-right: 30px;
+    margin-top: 50px;
+}
+
+#product {
+    height: 300px;
+    width: 500px;
+}
+
+#price {
+    font-weight: 700;
+    margin-bottom: 20px;
 }

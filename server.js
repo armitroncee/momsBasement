@@ -4,6 +4,8 @@ const mongoose = require("mongoose");
 const app = express();
 const PORT = process.env.PORT || 8080;
 const routes = require("./routes/html-routes");
+var exphbs = require("express-handlebars");
+var path = require("path")
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
@@ -27,6 +29,9 @@ dbm.on("error", function(error) {
 dbm.once("open", function() {
   console.log("Mongoose connection successful.");
 });
+
+app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+app.set("view engine", "handlebars");
 
 app.use('/', routes);
 
